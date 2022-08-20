@@ -33,8 +33,8 @@ else if (iconv_strlen($name) == 0)
 if ($password != $confirm_password) 
 	$error_request_handler = 'Passwords are not match;
 else {
-	$sault = 'u4h3f7h4387hfqp';
-	$password = md5($password) . $sault; 
+	$sault = GenerateRandomString();
+       	$password = md5($password) . $sault; 
 }
 
 
