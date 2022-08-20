@@ -7,7 +7,7 @@ session_start();
 <head>
 	<meta charset="utf-8">
 	<title>Authorization</title>
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
