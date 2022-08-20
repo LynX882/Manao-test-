@@ -57,7 +57,7 @@ curl -v\
 
 
 
-if (iconv_strlen($error_request_handler) == 0) { //если нет ошибок пишем в jsonl
+if (iconv_strlen($error_request_handler) == 0) { //если нет ошибок пишем в json
 	
 
 
@@ -87,14 +87,14 @@ $jsonbin->formatOutput = true;
 $jsonbin->save('db.json');
 
 
-header('Location: ..\authorization\authorization.php');
+header('Location: ..//authorization.php');
 
 } else 
 
 
 
 
-header('Location: registration.php');
+header('Location: ..//registration.php');
 
 
 
