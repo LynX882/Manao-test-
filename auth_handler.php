@@ -7,17 +7,18 @@ $password = trim(htmlspecialchars(stripslashes($_POST['password'])));
 $ip = $_SERVER['REMOTE_ADDR'];
 $agent = $_SERVER['HTTP_USER_AGENT'];
 
-$sault = 'u4h3f7h4387hfqp';
-$password_hash_auth = md5($password) . $sault; 
+$sault = GenerateRandomString();
+$password_hash_auth = md5(sha1($salt.crypt($password)))
+ 
 
 
 $_SESSION[login_auth] = $login;
 $_SESSION[password_auth] = $password;
 $_SESSION[error_request_handler] = $error_request_handler;
 
-$json_auth = simplejson_load_file("../registration/db.json");
+$json_auth = simplejson_load_file("../db.json");
 
-$pass_log = $xml_auth->xpath("user[login = '$login']/password");
+$pass_log = $json_auth->xpath("user[login = '$login']/password");
 
 
 if ($pass_log[0] == $password_hash_auth)
